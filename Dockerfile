@@ -14,5 +14,5 @@ RUN mv apache-tomcat-9.0.68/* /opt/tomcat/.
 #RUN java -version
 WORKDIR /opt/tomcat/webapps
 #RUN wget https://github.com/AKSarav/SampleWebApp/raw/master/dist/SampleWebApp.war
-EXPOSE 81
+EXPOSE 8081
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
