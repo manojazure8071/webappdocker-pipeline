@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('git_clone') {
+            steps {
+                // Get some code from a GitHub repository
+                git url: 'https://github.com/vsvvkt/SampleRegistratonForm.git', branch: 'master'
+            }
+		}
+		stage('dockerimagebuild') {
+			steps {
+				sh 'sudo docker build . -t webapp'
+			}
+		}
+		stage('dockercontainer') {
+			steps {
+				sh 'sudo docker run -p 8081:8080 -dit webapp'
+			}
+		}
+		
+	}
+}
