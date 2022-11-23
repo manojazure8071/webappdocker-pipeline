@@ -1,6 +1,6 @@
 FROM ubuntu
-MAINTAINER hello@gritfy.com
-RUN mkdir /opt/tomcat/
+
+#RUN mkdir /opt/tomcat/
 WORKDIR /opt/tomcat
 RUN apt-get update -y
 RUN apt-get upgrade -y
